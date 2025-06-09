@@ -1,2 +1,35 @@
-body { background: #1a1a1a; margin: 0; }
-#visualizer { width: 100vw; height: 100vh; }
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>音频可视化器</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>音频可视化器</h1>
+    
+    <div class="controls">
+        <button id="micBtn">开始录音</button>
+        <label class="upload-label">
+            上传音频
+            <input type="file" id="fileInput" accept=".mp3,.wav">
+        </label>
+        <button id="resetBtn">重置</button>
+    </div>
+
+    <!-- 音频进度控制 -->
+    <div class="progress-container">
+      <input type="range" id="progressBar" value="0" class="progress-bar">
+      <div class="time-display">
+        <span id="currentTime">0:00</span> / 
+        <span id="duration">0:00</span>
+      </div>
+    </div>
+
+    <canvas id="visualizer"></canvas>
+    <div id="status" class="status"></div>
+
+    <script src="app.js"></script>
+</body>
+</html>
